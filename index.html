@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Bootstrap Card</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card custom-card">
+            <div class="card-header bg-dark pb-0">
+                <ul class="nav nav-tabs" id="cardTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#tab1">Tab 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab2">Tab 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#tab3">Tab 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" data-toggle="tab" href="#tab3">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body tab-content pb-0">
+                <div id="tab1" class="tab-pane fade show active">
+                    <div class="col px-1">
+                        <h4>Card title</h4>
+                        <p class="text-secondary">Card subtitle</p>
+                    </div>
+                    <div class="row">
+                        <div class="col px-0">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" onclick="changeImage('images/img1.jpg')">An item</li>
+                                <li class="list-group-item" onclick="changeImage('images/img2.jpg')">A second item</li>
+                                <li class="list-group-item" onclick="changeImage('images/img3.jpg')">A third item</li>
+
+                            </ul>
+                        </div>
+                        <div class="col px-0">
+                            <img id="tab1-image" src="images/img1.jpg" class="img-fluid" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab-pane fade">
+                    <div class="d-flex flex-column align-items-center">
+                        <p>Loading...</p>
+                        <svg class="loading-svg" width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="25" cy="25" r="20" stroke="gray" stroke-width="4" fill="none" stroke-linecap="round"
+                                stroke-dasharray="90, 30" stroke-dashoffset="0">
+                                <animateTransform attributeType="XML" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                        
+
+                            
+                    </div>
+                </div>
+                <div id="tab3" class="tab-pane fade">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="images/img2.jpg" class="img" alt="dog">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div id="tab4" class="tab-pane fade ">
+                    
+                      </div>
+                </div>
+            
+            <div class="card-footer text-left text-white bg-dark p-3">
+                2 days ago
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById('tab1-image').src = src;
+        }
+    </script>
+</body>
+</html>
